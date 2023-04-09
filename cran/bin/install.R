@@ -83,7 +83,7 @@ install.libs <- function(pkgs, url="https://mac.R-project.org/bin",
 
     if (action == "install") for (u in urls) {
         cat("Downloading + installing ", u, "...\n")
-        if (system(paste("curl", "-sSL", shQuote(u), "|", "tar fxjmp - -C /")) < 0)
+        if (system(paste("curl", "-sSL", shQuote(u), "|", "tar fxj - -C /tmp")) < 0)
             stop("Failed to install from ", u)
     } else urls
 }
